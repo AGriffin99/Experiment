@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <link rel="stylesheet" href="main.css"> -->
+</head>
+<body>
+  <style>
+  body
+  {
+      background-image:url('static/Sailor_Moon_S-Logo.png');
+  /*    find an hd image with a bigger res*/
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+  #moon{
+    position: relative;
+    top: 20px;
+    left: 20px;
+  }
+  #mars{
+    position: relative;
+    left: 350px;
+  }
+  #mercury{
+
+    position: relative;
+    left: 1000px;
+  }
+  #venus{
+
+    position: relative;
+    bottom: 100px;
+    left: 575px;
+  }
+  #jupiter{
+
+    position: relative;
+    bottom:750px;
+    left: 750px;
+  }
+
+  .round{
+      height:200px;
+      width:200px;
+      border-radius: 50%;
+      /* background: transparent; */
+  }
+  </style>
+<div type="button" onclick="changeBackground(); playAudio()"><img id="moon"class="round" src="static/amulet.jpg" /></div>
+<div type="button" onclick="changeBackground1();playAudio()"><img id="mars" class="round" src="static/Mars-Pen-Anime.jpg" /></div>
+<div type="button" onclick="changeBackground2();playAudio()"><img id="mercury" class="round" src="static/Mercury_henshin.jpg" /></div>
+<div type="button" onclick="changeBackground3();playAudio()"><img id="venus" class="round" src="static/VenusPenAnime.png" /></div>
+<div type="button" onclick="changeBackground4();playAudio()"><img id="jupiter" class="round" src="static/Jupiter_Pen_anime.jpg" /></div>
+
+
+<script>
+
+var audio_files = [
+    'static/Anime_Magic_Sound_1.oga',
+    'static/Anime_Sparkle_Sound_3.oga',
+    'static/sailor_moon_sound_1.mp3',
+    'static/sailor_moon_specter.mp3',
+    'static/sailor_moon.mp3'
+]
+
+function playAudio(){
+	var random_file = audio_files[Math.floor(Math.random() * audio_files.length)];
+
+	var audio = new Audio(random_file);
+
+	console.log('audio:' + audio);
+    audio.play();
+}
+function changeBackground() {
+  var pics = document.getElementById('moon');
+  if(pics.src.match("static/amulet.jpg")) {pics.src="static/sailormoontransformation.gif";}
+  else {pics.src="static/amulet.jpg"};
+}
+function changeBackground1() {
+  var pics1 =document.getElementById('mars');
+  if(pics1.src.match("static/Mars-Pen-Anime.jpg")) {pics1.src="static/mars.gif";}
+  else {pics1.src="static/Mars-Pen-Anime.jpg";}
+}
+function changeBackground2() {
+  var pics2 =document.getElementById('mercury');
+  if(pics2.src.match("static/Mercury_henshin.jpg")) {pics2.src="static/mercury.gif";}
+  else {pics2.src="static/Mercury_henshin.jpg";}
+}
+function changeBackground3() {
+  var pics3=document.getElementById('venus');
+  if(pics3.src.match("static/VenusPenAnime.png")) {pics3.src="static/venus.gif";}
+  else {pics3.src="static/VenusPenAnime.png";}
+}
+function changeBackground4() {
+  var pics4 =document.getElementById('jupiter');
+  if(pics4.src.match("static/Jupiter_Pen_anime.jpg")) {pics4.src="static/jupiter.gif";}
+  else {pics4.src="static/Jupiter_Pen_anime.jpg";}
+}
+
+// Add another button that changes something else on the page:
+
+</script>
+
+</body>
+</html>
